@@ -1,0 +1,283 @@
+﻿<Window x:Class="WpfShapesDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:shapes="clr-namespace:WpfShapes;assembly=WpfShapes"
+        xmlns:local="clr-namespace:WpfShapesDemo"
+        mc:Ignorable="d"
+        Title="WpfShapes Demo"
+        Height="800" Width="1000">
+
+  <Window.Resources>
+    <Style TargetType="TextBlock">
+      <Setter Property="FontSize" Value="14"/>
+      <Setter Property="HorizontalAlignment" Value="Center"/>
+      <Setter Property="VerticalAlignment" Value="Top"/>
+      <Setter Property="Margin" Value="5"/>
+    </Style>
+  </Window.Resources>
+
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="250"/>
+      <ColumnDefinition Width="250"/>
+      <ColumnDefinition Width="250"/>
+      <ColumnDefinition Width="250"/>
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="250"/>
+      <RowDefinition Height="250"/>
+      <RowDefinition Height="250"/>
+    </Grid.RowDefinitions>
+
+    <!-- ==================== ArcArrow ==================== -->
+    <TextBlock Grid.Row="0" Grid.Column="0" Text="ArcArrow"/>
+    <shapes:ArcArrow Grid.Row="0" Grid.Column="0"
+                     Fill="Red"
+                     ArrowLengthRatio="0.3"
+                     ArrowWidthRatio="1.5"
+                     OuterRadius="80" InnerRadius="50" StartAngle="60" EndAngle="0" Center="125,125"/>
+
+    <shapes:ArcArrow Grid.Row="0" Grid.Column="0"
+                     Stroke="Blue" StrokeThickness="1"
+                     OuterRadius="70" InnerRadius="60" StartAngle="170" EndAngle="80" Center="125,125"/>
+
+    <shapes:ArcArrow Grid.Row="0" Grid.Column="0"
+                     Stroke="Blue" StrokeThickness="1"
+                     ArrowLengthRatio="0.1"
+                     ArrowWidthRatio="2"
+                     OuterRadius="100" InnerRadius="90" StartAngle="190" EndAngle="350" Center="125,125"/>
+
+    <shapes:ArcArrow Grid.Row="0" Grid.Column="0"
+                     Stroke="Blue" StrokeThickness="1"
+                     ArrowLengthRatio="0.1"
+                     ArrowWidthRatio="2"
+                     OuterRadius="70" InnerRadius="60" StartAngle="190" EndAngle="350" Center="125,125"/>
+
+    <shapes:ArcArrow Grid.Row="0" Grid.Column="0"
+                     Stroke="Blue" StrokeThickness="1"
+                     ArrowLengthRatio="0.1"
+                     ArrowWidthRatio="2"
+                     OuterRadius="40" InnerRadius="30" StartAngle="190" EndAngle="350" Center="125,125"/>
+
+    <!-- ==================== DoubleEndedArcArrow ==================== -->
+    <TextBlock Grid.Row="0" Grid.Column="1" Text="DoubleEndedArcArrow"/>
+    <shapes:DoubleEndedArcArrow Grid.Row="0" Grid.Column="1"
+                                Stroke="Blue" StrokeThickness="1"
+                                ArrowLengthRatio="0.1"
+                                OuterRadius="80" InnerRadius="70" StartAngle="-60" EndAngle="60" Center="125,125"/>
+
+    <!-- ==================== Oval ==================== -->
+    <TextBlock Grid.Row="0" Grid.Column="2" Text="Oval"/>
+    <shapes:Oval Grid.Row="0" Grid.Column="2"
+                              Stroke="Blue" StrokeThickness="1"
+                              Top="60"
+                              Bottom="80"
+                              Left="30"
+                              Right="130"/>
+
+    <shapes:Oval Grid.Row="0" Grid.Column="2"
+                              Stroke="Blue" StrokeThickness="1"
+                              Top="90"
+                              Bottom="130"
+                              Left="30"
+                              Right="130"/>
+
+    <shapes:Oval Grid.Row="0" Grid.Column="2"
+                              Stroke="Blue" StrokeThickness="1"
+                              Top="140"
+                              Bottom="200"
+                              Left="30"
+                              Right="130"/>
+
+    <shapes:Oval Grid.Row="0" Grid.Column="2"
+                              Stroke="Blue" StrokeThickness="1"
+                              Top="60"
+                              Bottom="200"
+                              Left="150"
+                              Right="190"/>
+
+    <shapes:Oval Grid.Row="0" Grid.Column="2"
+                              Stroke="Blue" StrokeThickness="1"
+                              Top="60"
+                              Bottom="200"
+                              Left="200"
+                              Right="220"/>
+
+    <!-- ==================== ArcOval ==================== -->
+    <TextBlock Grid.Row="0" Grid.Column="3" Text="ArcOval"/>
+    <shapes:ArcOval Grid.Row="0" Grid.Column="3"
+                    Stroke="Blue" StrokeThickness="1"
+                    OuterRadius="80" InnerRadius="70" StartAngle="-60" EndAngle="60" Center="125,125"/>
+
+    <shapes:ArcOval Grid.Row="0" Grid.Column="3"
+                    Stroke="Blue" StrokeThickness="1"
+                    OuterRadius="60" InnerRadius="30" StartAngle="-60" EndAngle="60" Center="125,125"/>
+
+    <shapes:ArcOval Grid.Row="0" Grid.Column="3"
+                    Stroke="Blue" StrokeThickness="1"
+                    OuterRadius="100" InnerRadius="30" StartAngle="90" EndAngle="270" Center="125,125"/>
+
+    <!-- ==================== PieSlice ==================== -->
+    <TextBlock Grid.Row="1" Grid.Column="0" Text="PieSlice"/>
+    <shapes:PieSlice Grid.Row="1" Grid.Column="0"
+                     Fill="Green"
+                     StartAngle="0" EndAngle="60" Center="125,125"/>
+
+    <!-- Shifting a PieSlice outwards it not a feature, but you can move the centre. -->
+    <shapes:PieSlice Grid.Row="1" Grid.Column="0"
+                     Fill="Red"
+                     StartAngle="60" EndAngle="90" Center="144.318,119.823"/>
+
+    <shapes:PieSlice Grid.Row="1" Grid.Column="0"
+                     Fill="Yellow"
+                     StartAngle="90" EndAngle="120" Center="125,125"/>
+
+    <shapes:PieSlice Grid.Row="1" Grid.Column="0"
+                     Fill="SkyBlue"
+                     StartAngle="120" EndAngle="200" Center="125,125"/>
+
+    <shapes:PieSlice Grid.Row="1" Grid.Column="0"
+                     Fill="Orange"
+                     StartAngle="200" EndAngle="220" Center="125,125"/>
+
+    <!-- ==================== PieSliceMargin ==================== -->
+    <TextBlock Grid.Row="1" Grid.Column="1" Text="PieSliceMargin"/>
+    <shapes:PieSliceMargin Grid.Row="1" Grid.Column="1"
+                           Stroke="Blue" StrokeThickness="1"
+                           StartAngle="0" EndAngle="60" Center="125,125"/>
+
+    <shapes:PieSliceMargin Grid.Row="1" Grid.Column="1"
+                           Stroke="Blue" StrokeThickness="1"
+                           StartAngle="60" EndAngle="90" Center="125,125"/>
+
+    <shapes:PieSliceMargin Grid.Row="1" Grid.Column="1"
+                           Stroke="Blue" StrokeThickness="1"
+                           StartAngle="90" EndAngle="120" Center="125,125"/>
+
+    <shapes:PieSliceMargin Grid.Row="1" Grid.Column="1"
+                           Stroke="Blue" StrokeThickness="1"
+                           StartAngle="120" EndAngle="200" Center="125,125"/>
+
+    <shapes:PieSliceMargin Grid.Row="1" Grid.Column="1"
+                           Stroke="Blue" StrokeThickness="1"
+                           RadiusMargin="1"
+                           StartAngle="200" EndAngle="220" Center="125,125"/>
+
+    <shapes:PieSliceMargin Grid.Row="1" Grid.Column="1"
+                           Stroke="Blue" StrokeThickness="1"
+                           RadiusMargin="1"
+                           StartAngle="220" EndAngle="240" Center="125,125"/>
+    <shapes:PieSliceMargin Grid.Row="1" Grid.Column="1"
+                           Stroke="Blue" StrokeThickness="1"
+                           RadiusMargin="1"
+                           StartAngle="240" EndAngle="260" Center="125,125"/>
+    <shapes:PieSliceMargin Grid.Row="1" Grid.Column="1"
+                           Stroke="Blue" StrokeThickness="1"
+                           RadiusMargin="1"
+                           StartAngle="260" EndAngle="280" Center="125,125"/>
+
+    <!-- ==================== PieSliceCut ==================== -->
+    <TextBlock Grid.Row="1" Grid.Column="2" Text="PieSliceCut"/>
+    <shapes:PieSliceCut Grid.Row="1" Grid.Column="2"
+                        Stroke="Blue" StrokeThickness="1"
+                        InnerRadius="20"
+                        OuterRadius="80"
+                        StartAngle="-45" EndAngle="45" Center="125,125"/>
+
+    <shapes:PieSliceCut Grid.Row="1" Grid.Column="2"
+                        Stroke="Blue" StrokeThickness="1"
+                        InnerRadius="20"
+                        OuterRadius="80"
+                        StartAngle="45" EndAngle="135" Center="125,125"/>
+
+    <shapes:PieSliceCut Grid.Row="1" Grid.Column="2"
+                        Stroke="Blue" StrokeThickness="1"
+                        InnerRadius="20"
+                        OuterRadius="80"
+                        StartAngle="135" EndAngle="225" Center="125,125"/>
+
+    <shapes:PieSliceCut Grid.Row="1" Grid.Column="2"
+                        Stroke="Blue" StrokeThickness="1"
+                        InnerRadius="20"
+                        OuterRadius="80"
+                        StartAngle="225" EndAngle="-45" Center="125,125"/>
+
+
+    <!-- ==================== PieSliceCutMargin ==================== -->
+    <TextBlock Grid.Row="1" Grid.Column="3" Text="PieSliceCutMargin"/>
+    <shapes:PieSliceCutMargin Grid.Row="1" Grid.Column="3"
+                              Stroke="Blue" StrokeThickness="1"
+                              RadiusMargin="4"
+                              InnerRadius="20"
+                              OuterRadius="80"
+                              StartAngle="-45" EndAngle="45" Center="125,125"/>
+
+    <shapes:PieSliceCutMargin Grid.Row="1" Grid.Column="3"
+                              Stroke="Blue" StrokeThickness="1"
+                              RadiusMargin="4"
+                              InnerRadius="20"
+                              OuterRadius="80"
+                              StartAngle="45" EndAngle="135" Center="125,125"/>
+
+    <shapes:PieSliceCutMargin Grid.Row="1" Grid.Column="3"
+                              Stroke="Blue" StrokeThickness="1"
+                              RadiusMargin="4"
+                              InnerRadius="20"
+                              OuterRadius="80"
+                              StartAngle="135" EndAngle="225" Center="125,125"/>
+
+    <shapes:PieSliceCutMargin Grid.Row="1" Grid.Column="3"
+                              Stroke="Blue" StrokeThickness="1"
+                              RadiusMargin="4"
+                              InnerRadius="20"
+                              OuterRadius="80"
+                              StartAngle="225" EndAngle="315" Center="125,125"/>
+
+
+    <!-- ==================== RingSlice ==================== -->
+    <TextBlock Grid.Row="2" Grid.Column="0" Text="RingSlice"/>
+    <shapes:RingSlice Grid.Row="2" Grid.Column="0"
+                      Stroke="Blue" StrokeThickness="1"
+                      InnerRadius="50"
+                      OuterRadius="80"
+                      StartAngle="-45" EndAngle="45" Center="125,125"/>
+
+    <shapes:RingSlice Grid.Row="2" Grid.Column="0"
+                      Stroke="Blue" StrokeThickness="1"
+                      InnerRadius="20"
+                      OuterRadius="80"
+                      StartAngle="60" EndAngle="180" Center="125,125"/>
+
+    <shapes:RingSlice Grid.Row="2" Grid.Column="0"
+                      Stroke="Blue" StrokeThickness="1"
+                      InnerRadius="70"
+                      OuterRadius="80"
+                      StartAngle="190" EndAngle="280" Center="125,125"/>
+
+    <shapes:RingSlice Grid.Row="2" Grid.Column="0"
+                      Stroke="Blue" StrokeThickness="1"
+                      InnerRadius="50"
+                      OuterRadius="60"
+                      StartAngle="190" EndAngle="280" Center="125,125"/>
+
+    <shapes:RingSlice Grid.Row="2" Grid.Column="0"
+                      Stroke="Blue" StrokeThickness="1"
+                      InnerRadius="30"
+                      OuterRadius="40"
+                      StartAngle="190" EndAngle="280" Center="125,125"/>
+
+    <!-- ==================== RingOfRectangularTicks ==================== -->
+    <TextBlock Grid.Row="2" Grid.Column="2" Text="RingOfRectangularTicks"/>
+    <shapes:RingOfRectangularTicks Grid.Row="2" Grid.Column="2"
+                                   OuterRadius="93"
+                                   InnerRadius="81"
+                                   Fill="Blue"
+                                   Opacity="0.50"
+                                   Center="125,125"/>
+
+
+  </Grid>
+</Window>
