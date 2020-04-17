@@ -269,6 +269,21 @@
                       OuterRadius="40"
                       StartAngle="190" EndAngle="280" Center="125,125"/>
 
+    <!-- ==================== Ring ==================== -->
+    <TextBlock Grid.Row="2" Grid.Column="1" Text="Ring"/>
+    <shapes:Ring Grid.Row="2" Grid.Column="1"
+                 OuterRadius="93"
+                 InnerRadius="81"
+                 Fill="Blue"
+                 Center="125,125"/>
+
+    <shapes:Ring Grid.Row="2" Grid.Column="1"
+                 OuterRadius="60"
+                 InnerRadius="30"
+                 Stroke="Blue"
+                 Fill="LightGray"
+                 Center="125,125"/>
+
     <!-- ==================== RingOfRectangularTicks ==================== -->
     <TextBlock Grid.Row="2" Grid.Column="2" Text="RingOfRectangularTicks"/>
     <shapes:RingOfRectangularTicks Grid.Row="2" Grid.Column="2"

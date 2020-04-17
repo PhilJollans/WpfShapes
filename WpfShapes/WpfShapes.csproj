@@ -53,6 +53,7 @@
     <Compile Include="PieSliceMargin.cs" />
     <Compile Include="PieSlice.cs" />
     <Compile Include="PieSliceCut.cs" />
+    <Compile Include="Ring.cs" />
     <Compile Include="RingOfRectangularTicks.cs" />
     <Compile Include="RingSlice.cs" />
   </ItemGroup>
