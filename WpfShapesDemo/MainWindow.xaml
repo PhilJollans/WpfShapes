@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:WpfShapesDemo"
         mc:Ignorable="d"
         Title="WpfShapes Demo"
-        Height="800" Width="1000">
+        Height="800" Width="1250">
 
   <Window.Resources>
     <Style TargetType="TextBlock">
@@ -20,6 +20,7 @@
 
   <Grid>
     <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="250"/>
       <ColumnDefinition Width="250"/>
       <ColumnDefinition Width="250"/>
       <ColumnDefinition Width="250"/>
@@ -272,16 +273,16 @@
     <!-- ==================== Ring ==================== -->
     <TextBlock Grid.Row="2" Grid.Column="1" Text="Ring"/>
     <shapes:Ring Grid.Row="2" Grid.Column="1"
-                 OuterRadius="93"
-                 InnerRadius="81"
-                 Fill="Blue"
-                 Center="125,125"/>
+                 OuterRadius="50"
+                 InnerRadius="30"
+                 StrokeThickness="0"
+                 Fill="LightPink"
+                 Center="75,175"/>
 
     <shapes:Ring Grid.Row="2" Grid.Column="1"
-                 OuterRadius="60"
-                 InnerRadius="30"
-                 Stroke="Blue"
-                 Fill="LightGray"
+                 OuterRadius="93"
+                 InnerRadius="65"
+                 Fill="LightSteelBlue"
                  Center="125,125"/>
 
     <!-- ==================== RingOfRectangularTicks ==================== -->
@@ -332,6 +333,30 @@
                       StrokeThickness="1"
                       Stroke="Blue"
                       Center="125,125"/>
+
+    <!-- ==================== GearWheelRing ==================== -->
+    <TextBlock Grid.Row="2" Grid.Column="4" Text="GearWheelRing"/>
+    <shapes:GearWheelRing Grid.Row="2" Grid.Column="4"
+                          OuterRadius="50"
+                          InnerRadius="45"
+                          InnerRingRadius="35"
+                          NumberOfTeeth="16"
+                          OuterToothSeparationRatio="0.45"
+                          InnerToothSeparationRatio="0.65"
+                          StrokeThickness="0"
+                          Fill="LightPink"
+                          Center="75,175"/>
+
+    <shapes:GearWheelRing Grid.Row="2" Grid.Column="4"
+                          OuterRadius="93"
+                          InnerRadius="81"
+                          InnerRingRadius="65"
+                          NumberOfTeeth="20"
+                          OuterToothSeparationRatio="0.45"
+                          InnerToothSeparationRatio="0.65"
+                          StrokeThickness="0"
+                          Fill="LightSteelBlue"
+                          Center="125,125"/>
 
 
   </Grid>

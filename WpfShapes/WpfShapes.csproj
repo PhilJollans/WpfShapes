@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ArcArrow.cs" />
     <Compile Include="GearWheel.cs" />
+    <Compile Include="GearWheelRing.cs" />
     <Compile Include="PieSliceCutMargin.cs" />
     <Compile Include="PieSliceMargin.cs" />
     <Compile Include="PieSlice.cs" />
