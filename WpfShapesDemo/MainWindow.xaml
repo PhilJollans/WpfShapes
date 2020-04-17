@@ -293,6 +293,46 @@
                                    Opacity="0.50"
                                    Center="125,125"/>
 
+    <!-- ==================== GearWheel ==================== -->
+    <TextBlock Grid.Row="2" Grid.Column="3" Text="GearWheel"/>
+    <shapes:GearWheel Grid.Row="2" Grid.Column="3"
+                      OuterRadius="93"
+                      InnerRadius="81"
+                      NumberOfTeeth="32"
+                      StrokeThickness="1"
+                      Stroke="Blue"
+                      Center="125,125"/>
+
+    <shapes:GearWheel Grid.Row="2" Grid.Column="3"
+                      OuterRadius="75"
+                      InnerRadius="70"
+                      NumberOfTeeth="12"
+                      OuterToothSeparationRatio="0.45"
+                      InnerToothSeparationRatio="0.55"
+                      StrokeThickness="1"
+                      Stroke="Blue"
+                      Center="125,125"/>
+
+    <shapes:GearWheel Grid.Row="2" Grid.Column="3"
+                      OuterRadius="60"
+                      InnerRadius="50"
+                      NumberOfTeeth="8"
+                      OuterToothSeparationRatio="0.25"
+                      InnerToothSeparationRatio="0.45"
+                      StrokeThickness="1"
+                      Stroke="Blue"
+                      Center="125,125"/>
+
+    <shapes:GearWheel Grid.Row="2" Grid.Column="3"
+                      OuterRadius="35"
+                      InnerRadius="32"
+                      NumberOfTeeth="8"
+                      OuterToothSeparationRatio="0.65"
+                      InnerToothSeparationRatio="0.85"
+                      StrokeThickness="1"
+                      Stroke="Blue"
+                      Center="125,125"/>
+
 
   </Grid>
 </Window>
