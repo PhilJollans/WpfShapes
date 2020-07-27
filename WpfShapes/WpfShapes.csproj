@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArcArrow.cs" />
+    <Compile Include="Arrow.cs" />
     <Compile Include="GearWheel.cs" />
     <Compile Include="GearWheelRing.cs" />
     <Compile Include="PieSliceCutMargin.cs" />

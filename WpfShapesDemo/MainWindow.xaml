@@ -121,6 +121,52 @@
                     Stroke="Blue" StrokeThickness="1"
                     OuterRadius="100" InnerRadius="30" StartAngle="90" EndAngle="270" Center="125,125"/>
 
+    <!-- ==================== Arrow ==================== -->
+    <TextBlock Grid.Row="0" Grid.Column="4" Text="Arrow"/>
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Stroke="Blue" StrokeThickness="1"
+                  Start="40,40" End="210,40" ShaftWidth="8"/>
+
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Stroke="Blue" StrokeThickness="1"
+                  Start="40,70" End="210,70" ShaftWidth="8" ArrowLengthRatio="0.1"/>
+
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Stroke="Blue" StrokeThickness="1"
+                  Start="40,100" End="210,100" ShaftWidth="8" ArrowLengthRatio="0.25" ArrowWidthRatio="2"/>
+
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Stroke="Blue" StrokeThickness="1"
+                  Start="125,170" End="125,125" ShaftWidth="10"/>
+
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Fill="Green"
+                  Start="150,170" End="175,125" ShaftWidth="10"/>
+
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Stroke="Blue" StrokeThickness="1"
+                  Start="100,170" End="75,125" ShaftWidth="10"/>
+
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Stroke="Blue" StrokeThickness="1"
+                  Start="175,175" End="225,175" ShaftWidth="10"/>
+
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Stroke="Blue" StrokeThickness="1"
+                  Start="75,175" End="25,175" ShaftWidth="10"/>
+
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Stroke="Blue" StrokeThickness="1"
+                  Start="150,180" End="175,225" ShaftWidth="10"/>
+
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Stroke="Red" StrokeThickness="1"
+                  Start="100,180" End="75,225" ShaftWidth="10"/>
+
+    <shapes:Arrow Grid.Row="0" Grid.Column="4"
+                  Stroke="Blue" StrokeThickness="1"
+                  Start="125,180" End="125,225" ShaftWidth="10"/>
+
     <!-- ==================== PieSlice ==================== -->
     <TextBlock Grid.Row="1" Grid.Column="0" Text="PieSlice"/>
     <shapes:PieSlice Grid.Row="1" Grid.Column="0"
