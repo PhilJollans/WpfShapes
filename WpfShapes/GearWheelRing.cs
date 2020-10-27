@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
@@ -167,7 +168,7 @@ namespace WpfShapes
 
       var sb = new StringBuilder() ;
       sb.Append ( "F0 " ) ;
-      sb.AppendFormat ( "M {0:F3},{1:F3} ", pstart.X, pstart.Y ) ;
+      sb.AppendFormat ( CultureInfo.InvariantCulture, "M {0:F3},{1:F3} ", pstart.X, pstart.Y ) ;
 
       // In each loop go up the side of the tooth, along the outer arc, down the other side and along the inner arc to the next tooth.
       for ( int i = 0 ; i < NumberOfTeeth ; i++ )
@@ -192,18 +193,18 @@ namespace WpfShapes
         var p3 = new Point ( InnerRadius * si1, -InnerRadius * ci1 ) + offset ;
         var p4 = new Point ( InnerRadius * si2, -InnerRadius * ci2 ) + offset ;
 
-        sb.AppendFormat ( "L {0:F3},{1:F3} ", p1.X, p1.Y );
-        sb.AppendFormat ( "A {0:F3},{0:F3} {1:F3} 0 1 {2:F3},{3:F3} ", OuterRadius, tooth_outer_deg, p2.X, p2.Y );
-        sb.AppendFormat ( "L {0:F3},{1:F3} ", p3.X, p3.Y );
-        sb.AppendFormat ( "A {0:F3},{0:F3} {1:F3} 0 1 {2:F3},{3:F3} ", InnerRadius, tooth_inner_deg, p4.X, p4.Y );
+        sb.AppendFormat ( CultureInfo.InvariantCulture, "L {0:F3},{1:F3} ", p1.X, p1.Y );
+        sb.AppendFormat ( CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 1 {2:F3},{3:F3} ", OuterRadius, tooth_outer_deg, p2.X, p2.Y );
+        sb.AppendFormat ( CultureInfo.InvariantCulture, "L {0:F3},{1:F3} ", p3.X, p3.Y );
+        sb.AppendFormat ( CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 1 {2:F3},{3:F3} ", InnerRadius, tooth_inner_deg, p4.X, p4.Y );
       }
 
       var pInner1 = new Point ( 0, -InnerRingRadius ) + offset ;
       var pInner2 = new Point ( 0, +InnerRingRadius ) + offset ;
 
-      sb.AppendFormat ( "M {0:F3},{1:F3} ", pInner1.X, pInner1.Y ) ;
-      sb.AppendFormat ( "A {0:F3},{0:F3} {1:F3} 1 1 {2:F3},{3:F3} ", InnerRingRadius, Math.PI, pInner2.X, pInner2.Y ) ;
-      sb.AppendFormat ( "A {0:F3},{0:F3} {1:F3} 1 1 {2:F3},{3:F3} ", InnerRingRadius, Math.PI, pInner1.X, pInner1.Y ) ;
+      sb.AppendFormat ( CultureInfo.InvariantCulture, "M {0:F3},{1:F3} ", pInner1.X, pInner1.Y ) ;
+      sb.AppendFormat ( CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 1 1 {2:F3},{3:F3} ", InnerRingRadius, Math.PI, pInner2.X, pInner2.Y ) ;
+      sb.AppendFormat ( CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 1 1 {2:F3},{3:F3} ", InnerRingRadius, Math.PI, pInner1.X, pInner1.Y ) ;
 
       sb.Append ( "Z " ) ;
 

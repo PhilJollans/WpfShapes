@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
@@ -139,11 +140,11 @@ namespace WpfShapes
 
       var sb = new StringBuilder() ;
 
-      sb.AppendFormat ( "M {0:F3},{1:F3} ", p1.X, p1.Y ) ;
-      sb.AppendFormat ( "A {0:F3},{0:F3} {1:F3} 0 {2} {3:F3},{4:F3} ", OuterRadius, a2-a1, 1, p2.X, p2.Y ) ;
-      sb.AppendFormat ( "A {0:F3},{0:F3} {1:F3} 0 {2} {3:F3},{4:F3} ", EndRadius, Math.PI, 1, p3.X, p3.Y ) ;
-      sb.AppendFormat ( "A {0:F3},{0:F3} {1:F3} 0 {2} {3:F3},{4:F3} ", InnerRadius, a2-a1, 0, p4.X, p4.Y ) ;
-      sb.AppendFormat ( "A {0:F3},{0:F3} {1:F3} 0 {2} {3:F3},{4:F3} ", EndRadius, Math.PI, 1, p1.X, p1.Y ) ;
+      sb.AppendFormat ( CultureInfo.InvariantCulture, "M {0:F3},{1:F3} ", p1.X, p1.Y ) ;
+      sb.AppendFormat ( CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 {2} {3:F3},{4:F3} ", OuterRadius, a2-a1, 1, p2.X, p2.Y ) ;
+      sb.AppendFormat ( CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 {2} {3:F3},{4:F3} ", EndRadius, Math.PI, 1, p3.X, p3.Y ) ;
+      sb.AppendFormat ( CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 {2} {3:F3},{4:F3} ", InnerRadius, a2-a1, 0, p4.X, p4.Y ) ;
+      sb.AppendFormat ( CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 {2} {3:F3},{4:F3} ", EndRadius, Math.PI, 1, p1.X, p1.Y ) ;
       sb.Append ( "Z " ) ;
 
       _path = sb.ToString() ;
