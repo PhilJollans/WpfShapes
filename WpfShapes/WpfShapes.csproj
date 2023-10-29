@@ -59,6 +59,7 @@
     <Compile Include="Ring.cs" />
     <Compile Include="RingOfRectangularTicks.cs" />
     <Compile Include="RingSlice.cs" />
+    <Compile Include="SpokedWheel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArcOval.cs" />

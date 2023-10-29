@@ -283,6 +283,17 @@
                               OuterRadius="80"
                               StartAngle="225" EndAngle="315" Center="125,125"/>
 
+    <!-- ==================== SpokedWheel ==================== -->
+    <TextBlock Grid.Row="1" Grid.Column="4" Text="SpokedWheel"/>
+    <shapes:SpokedWheel Grid.Row="1" Grid.Column="4"
+                        Stroke="Blue"
+                        RimRadius="93"
+                        RimInnerRadius="80"
+                        HubRadius="20"
+                        SpokeThickness="5"
+                        NumberOfSpokes="11"
+                        StrokeThickness="1"
+                        Center="125,125"/>
 
     <!-- ==================== RingSlice ==================== -->
     <TextBlock Grid.Row="2" Grid.Column="0" Text="RingSlice"/>
