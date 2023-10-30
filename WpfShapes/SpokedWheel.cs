@@ -140,6 +140,14 @@ namespace WpfShapes
       double spokeSeparationAtHub = spokeSeparation - ( 2.0 * halfSpokeAngleAtHub ) ;
       double spokeSeparationAtRim = spokeSeparation - ( 2.0 * halfSpokeAngleAtRim) ;
 
+      // If there is no gap between the spokes at the hub, adjacent spokes will come
+      // together at a single point, which may be further away from the centre.
+      double ApexRadius = 0.0 ;
+      if ( spokeSeparationAtHub <= 0 )
+      {
+        ApexRadius = ( SpokeThickness / 2.0 ) / Math.Sin ( spokeSeparation / 2.0 ) ;
+      }
+
       var sb = new StringBuilder();
 
       // Use FillRule F0 = EvenOdd to make a holes
@@ -154,35 +162,73 @@ namespace WpfShapes
       sb.AppendFormat(CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 1 1 {2:F3},{3:F3} ", RimRadius, Math.PI, p1.X, p1.Y);
 
       // We won't actually draw the spokes. Instead will draw the holes inbetween the spokes.
-      // To do, handle the case where there are two many spokes in the hub.
       for (int i = 0; i < NumberOfSpokes; i++)
       {
-        double a1 = i * spokeSeparation;
+        // Get the angle of this spoke and the next spoke.
+        double a1 = i * spokeSeparation ;
         double a2 = a1 + spokeSeparation ;
-        double o1 = a1 + halfSpokeAngleAtRim ;
-        double o2 = a2 - halfSpokeAngleAtRim ;
-        double i1 = a2 - halfSpokeAngleAtHub;
-        double i2 = a1 + halfSpokeAngleAtHub;
 
-        double co1 = Math.Cos(o1);
-        double so1 = Math.Sin(o1);
-        double co2 = Math.Cos(o2);
-        double so2 = Math.Sin(o2);
-        double ci1 = Math.Cos(i1);
-        double si1 = Math.Sin(i1);
-        double ci2 = Math.Cos(i2);
-        double si2 = Math.Sin(i2);
+        // Handle the two cases separately.
+        // I think this is more readable, even if some code is duplicated.
+        if ( spokeSeparationAtHub > 0 )
+        {
+          // The hole has four points
 
-        var q1 = new Point(RimInnerRadius * so1, -RimInnerRadius * co1) + offset;
-        var q2 = new Point(RimInnerRadius * so2, -RimInnerRadius * co2) + offset;
-        var q3 = new Point(HubRadius * si1, -HubRadius * ci1) + offset;
-        var q4 = new Point(HubRadius * si2, -HubRadius * ci2) + offset;
+          // Adjust for the spoke width at the rim
+          double o1 = a1 + halfSpokeAngleAtRim;
+          double o2 = a2 - halfSpokeAngleAtRim;
 
-        sb.AppendFormat(CultureInfo.InvariantCulture, "M {0:F3},{1:F3} ", q1.X, q1.Y);
-        sb.AppendFormat(CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 1 {2:F3},{3:F3} ", RimInnerRadius, spokeSeparationAtRim, q2.X, q2.Y);
-        sb.AppendFormat(CultureInfo.InvariantCulture, "L {0:F3},{1:F3} ", q3.X, q3.Y);
-        sb.AppendFormat(CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 0 {2:F3},{3:F3} ", HubRadius, spokeSeparationAtHub, q4.X, q4.Y);
-        sb.AppendFormat(CultureInfo.InvariantCulture, "L {0:F3},{1:F3} ", q1.X, q1.Y);
+          // Adjust for the spoke width at the hub
+          double i1 = a2 - halfSpokeAngleAtHub;
+          double i2 = a1 + halfSpokeAngleAtHub;
+
+          double co1 = Math.Cos(o1);
+          double so1 = Math.Sin(o1);
+          double co2 = Math.Cos(o2);
+          double so2 = Math.Sin(o2);
+          double ci1 = Math.Cos(i1);
+          double si1 = Math.Sin(i1);
+          double ci2 = Math.Cos(i2);
+          double si2 = Math.Sin(i2);
+
+          var q1 = new Point(RimInnerRadius * so1, -RimInnerRadius * co1) + offset;
+          var q2 = new Point(RimInnerRadius * so2, -RimInnerRadius * co2) + offset;
+          var q3 = new Point(HubRadius * si1, -HubRadius * ci1) + offset;
+          var q4 = new Point(HubRadius * si2, -HubRadius * ci2) + offset;
+
+          sb.AppendFormat(CultureInfo.InvariantCulture, "M {0:F3},{1:F3} ", q1.X, q1.Y);
+          sb.AppendFormat(CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 1 {2:F3},{3:F3} ", RimInnerRadius, spokeSeparationAtRim, q2.X, q2.Y);
+          sb.AppendFormat(CultureInfo.InvariantCulture, "L {0:F3},{1:F3} ", q3.X, q3.Y);
+          sb.AppendFormat(CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 0 {2:F3},{3:F3} ", HubRadius, spokeSeparationAtHub, q4.X, q4.Y);
+          sb.AppendFormat(CultureInfo.InvariantCulture, "L {0:F3},{1:F3} ", q1.X, q1.Y);
+        }
+        else
+        {
+          // The hole has three points
+
+          // Adjust for the spoke width at the rim
+          double o1 = a1 + halfSpokeAngleAtRim;
+          double o2 = a2 - halfSpokeAngleAtRim;
+
+          // Get the mid point angle
+          double im = a1 + ( spokeSeparation / 2.0 ) ;
+
+          double co1 = Math.Cos(o1);
+          double so1 = Math.Sin(o1);
+          double co2 = Math.Cos(o2);
+          double so2 = Math.Sin(o2);
+          double cim = Math.Cos(im);
+          double sim = Math.Sin(im);
+
+          var q1 = new Point(RimInnerRadius * so1, -RimInnerRadius * co1) + offset;
+          var q2 = new Point(RimInnerRadius * so2, -RimInnerRadius * co2) + offset;
+          var qm = new Point(ApexRadius * sim, -ApexRadius * cim) + offset;
+
+          sb.AppendFormat(CultureInfo.InvariantCulture, "M {0:F3},{1:F3} ", q1.X, q1.Y);
+          sb.AppendFormat(CultureInfo.InvariantCulture, "A {0:F3},{0:F3} {1:F3} 0 1 {2:F3},{3:F3} ", RimInnerRadius, spokeSeparationAtRim, q2.X, q2.Y);
+          sb.AppendFormat(CultureInfo.InvariantCulture, "L {0:F3},{1:F3} ", qm.X, qm.Y);
+          sb.AppendFormat(CultureInfo.InvariantCulture, "L {0:F3},{1:F3} ", q1.X, q1.Y);
+        }
       }
 
       sb.Append("Z ");

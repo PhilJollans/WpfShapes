@@ -287,13 +287,35 @@
     <TextBlock Grid.Row="1" Grid.Column="4" Text="SpokedWheel"/>
     <shapes:SpokedWheel Grid.Row="1" Grid.Column="4"
                         Stroke="Blue"
+                        Fill="LightPink"
                         RimRadius="93"
                         RimInnerRadius="80"
                         HubRadius="20"
                         SpokeThickness="5"
                         NumberOfSpokes="11"
-                        StrokeThickness="1"
+                        StrokeThickness="0"
                         Center="125,125"/>
+
+    <shapes:SpokedWheel Grid.Row="1" Grid.Column="4"
+                        Stroke="Blue"
+                        RimRadius="50"
+                        RimInnerRadius="40"
+                        HubRadius="2"
+                        SpokeThickness="10"
+                        NumberOfSpokes="6"
+                        StrokeThickness="1"
+                        Center="75,175"/>
+
+    <shapes:SpokedWheel Grid.Row="1" Grid.Column="4"
+                        Stroke="Blue"
+                        Fill="LightSteelBlue"
+                        RimRadius="40"
+                        RimInnerRadius="30"
+                        HubRadius="10"
+                        SpokeThickness="5"
+                        NumberOfSpokes="7"
+                        StrokeThickness="0"
+                        Center="175,175"/>
 
     <!-- ==================== RingSlice ==================== -->
     <TextBlock Grid.Row="2" Grid.Column="0" Text="RingSlice"/>
